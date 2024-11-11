@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Logo Slider</title>
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <!-- Slick Theme (Optional) -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .logo-slider {
+            width: 80%;
+            margin: 50px auto;
+        }
+
+        .logo-slider div {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .logo-slider img {
+            width: 100%; /* Adjust image size */
+            max-width: 150px; /* Keep max width for logos */
+            height: auto;
+            display: inline-block;
+        }
+
+        .slick-slide {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-slider">
+        <div><img src="logo1.png" alt="Client 1"></div>
+        <div><img src="logo2.png" alt="Client 2"></div>
+        <div><img src="logo3.png" alt="Client 3"></div>
+        <div><img src="logo4.png" alt="Client 4"></div>
+        <div><img src="logo5.png" alt="Client 5"></div>
+        <div><img src="logo6.png" alt="Client 6"></div>
+    </div>
+
+    <!-- jQuery (Required) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.logo-slider').slick({
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,  // Adjust speed in milliseconds
+                arrows: false,         // No navigation arrows
+                dots: false,           // No pagination dots
+                infinite: true,        // Infinite loop
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>
